@@ -9,13 +9,15 @@ const store = reactive({
     });
     return count;
   },
-  allChecked() {
+  // Check if all entries are checked.
+  status() {
     for (let i = 0; i < this.collection_data.length; i++) {
       if (this.collection_data[i].all_confirmed === false) {
         return false;
       }
     }
   },
+  // Check if all group entries are checked.
   groupChecked(collector_id) {
     this.collection_data.forEach((item) => {
       for (let i = 0; i < item.collections.length; i++) {
@@ -27,6 +29,8 @@ const store = reactive({
       }
     });
   },
+
+  // Toggle status for all entry.
   confimAll() {
     this.collection_data.forEach((item) => {
       item.all_confirmed = true;
@@ -43,6 +47,8 @@ const store = reactive({
       });
     });
   },
+
+  //Toggle Status for group entry.
   confirmGroup(collector_id) {
     this.collection_data.forEach((item) => {
       if (item.collector_id === collector_id) {
@@ -63,6 +69,8 @@ const store = reactive({
       }
     });
   },
+
+  //Change single status.
   confirmSingle(sl_no, collector_id) {
     this.collection_data.forEach((item) => {
       if (item.collector_id === collector_id) {
