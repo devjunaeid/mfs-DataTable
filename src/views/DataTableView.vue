@@ -57,8 +57,13 @@ const toggleStatus = () => {
                             rowspan="2"
                             class="sticky left-[23rem] min-w-[5rem] bg-green-700 border-r border-green-300 z-50"
                         >
-                            <div>
+                            <div
+                                class="flex flex-col justify-center items-center"
+                            >
                                 <span>Confirm</span>
+                                <div
+                                    class="w-full h-[1px] my-1 bg-green-300"
+                                ></div>
                                 <input
                                     type="checkbox"
                                     :checked="allChecked"
